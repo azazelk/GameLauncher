@@ -109,6 +109,7 @@ void LaunchGameButton::toolmapper(QAction* act){
             ui->toolButton->setText(*game_name);
             games_list->open(QIODevice::ReadOnly);
             QList<QByteArray> names = games_list->readAll().split('\n');
+            names.erase(names.end()-1);
             games_list->close();
             games_list->open(QIODevice::WriteOnly);
             QTextStream out(games_list);
@@ -159,6 +160,8 @@ void LaunchGameButton::toolmapper(QAction* act){
         games_list->close();
         paths_list.close();
         QFile::remove("games_pixmaps/" + *game_name + ".png");
+        current_button_num = 0;
+        *this_button_number = 0;
         emit reset_signal();
         delete this;
     }
@@ -181,5 +184,4 @@ void LaunchGameButton::reset()
         current_button_num++;
         *this_button_number = current_button_num-1;
     }
-
 }
