@@ -24,4 +24,5 @@ private:
     inline void cols_rows_checker();
 public slots:
     void add_game();
+    void reset_slot();
 };

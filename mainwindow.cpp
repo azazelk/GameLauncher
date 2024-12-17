@@ -75,6 +75,7 @@ void MainWindow::add_game()
     };
     if (!path.isEmpty() && path_cheker()){
         launch_list->append(new LaunchGameButton(path, this));
+        connect(launch_list->last(), SIGNAL(reset_signal()), this, SLOT(reset_slot()));
         grid_layout->addWidget(launch_list->last(), *rows, *cols);
         games_paths->open(QIODevice::Append);
         QTextStream out(games_paths);
@@ -100,6 +101,7 @@ void MainWindow::games_reset(QFile* games_paths){
         while (i < games_from_file.size()-1){
             game_path = games_from_file.at(i);
             launch_list->append(new LaunchGameButton(game_path, this));
+            connect(launch_list->last(), SIGNAL(reset_signal()), this, SLOT(reset_slot()));
             grid_layout->addWidget(launch_list->last(), *rows, *cols);
             (*cols)++;
             cols_rows_checker();
@@ -116,4 +118,14 @@ void MainWindow::cols_rows_checker(){
         (*cols) = 0;
         (*rows)++;
     }
+}
+
+void MainWindow::reset_slot(){
+    for (int i = 0; i < launch_list->size(); i++){
+        grid_layout->removeWidget(launch_list->at(i));
+        launch_list->at(i)->hide();
+    }
+    launch_list->clear();
+    (*rows) = 0; (*cols) = 0;
+    games_reset(games_paths);
 }

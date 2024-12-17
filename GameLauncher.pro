@@ -12,13 +12,15 @@ SOURCES += \
     game_proc.cpp \
     launchgamebutton.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    rename_dialog.cpp
 
 HEADERS += \
     game_proc.h \
     game_proc.h \
     launchgamebutton.h \
-    mainwindow.h
+    mainwindow.h \
+    rename_dialog.h
 
 TRANSLATIONS += \
     GameLauncher_ru_RU.ts
@@ -34,4 +36,5 @@ RESOURCES += \
     resources.qrc
 
 FORMS += \
-    launchgamebutton.ui
+    launchgamebutton.ui \
+    rename_dialog.ui
