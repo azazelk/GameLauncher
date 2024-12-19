@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     main_scrol_wgt = new QScrollArea(this);
     main_scrol_wgt->setWidgetResizable(true);
     main_wgt = new QWidget(main_scrol_wgt);
+    main_wgt->setObjectName("MainWgt");
     grid_layout = new QGridLayout(main_wgt);
 
     grid_layout->setColumnStretch(0, 104);
@@ -41,9 +42,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     tool_bar->addAction(add);
     this->setCentralWidget(main_scrol_wgt);
     this->addToolBar(Qt::ToolBarArea::RightToolBarArea, tool_bar);
-
     games_reset(games_paths);
-
     connect(add, SIGNAL(triggered(bool)), this, SLOT(add_game()));
 }
 

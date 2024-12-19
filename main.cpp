@@ -7,7 +7,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
@@ -17,6 +16,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    QFile style_file(":/MaterialDark.qss");
+    style_file.open(QIODevice::ReadOnly);
+    a.setStyleSheet(style_file.readAll());
+    style_file.close();
     MainWindow w;
     w.show();
     return a.exec();

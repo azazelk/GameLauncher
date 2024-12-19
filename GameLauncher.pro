@@ -38,3 +38,6 @@ RESOURCES += \
 FORMS += \
     launchgamebutton.ui \
     rename_dialog.ui
+
+DISTFILES += \
+    ../style.css
