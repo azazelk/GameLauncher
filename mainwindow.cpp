@@ -83,7 +83,7 @@ void MainWindow::add_game()
         (*cols)++;
     } else {
         QMessageBox alert;
-        alert.setText(tr("Игра уже добавлена!"));
+        alert.setText(tr("Ошибка при добавлении игры!"));
         alert.setWindowTitle(tr("Предупреждение"));
         alert.setWindowIcon(QIcon(":/images/img/warning.ico"));
         alert.exec();

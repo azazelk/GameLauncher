@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    QFile style_file(":/MaterialDark.qss");
+    QFile style_file(":/Remover.qss");
     style_file.open(QIODevice::ReadOnly);
     a.setStyleSheet(style_file.readAll());
     style_file.close();

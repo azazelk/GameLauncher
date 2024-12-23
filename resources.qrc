@@ -4,6 +4,6 @@
         <file>img/warning.ico</file>
     </qresource>
     <qresource prefix="/">
-        <file>MaterialDark.qss</file>
+        <file>Remover.qss</file>
     </qresource>
 </RCC>
