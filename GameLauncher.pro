@@ -23,7 +23,6 @@ HEADERS += \
     rename_dialog.h
 
 TRANSLATIONS += \
-    GameLauncher_ru_RU.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 

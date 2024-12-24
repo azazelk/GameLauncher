@@ -2,6 +2,7 @@
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
+
     QDir current_dir(QDir::current());
     games_paths = new QFile(current_dir.absoluteFilePath("games_paths.txt"));
 

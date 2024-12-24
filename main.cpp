@@ -7,15 +7,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "GameLauncher_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
-            break;
-        }
-    }
     QFile style_file(":/Remover.qss");
     style_file.open(QIODevice::ReadOnly);
     a.setStyleSheet(style_file.readAll());

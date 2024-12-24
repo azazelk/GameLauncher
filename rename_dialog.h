@@ -16,7 +16,7 @@ public:
     QString* get_input();
 private:
     Ui::rename_dialog *ui;
-     QString* input_str;
+    QString* input_str;
 public slots:
     void input_accepted();
 };
